@@ -1,0 +1,34 @@
+<div class="container col-md-10">
+    <table class="table table-border table-striped">
+        <tr>
+            <td>
+                Employee Id
+            </td>
+            <td>
+                Employee Name
+            </td>
+            <td>
+                Employee Email
+            </td>
+            <td>
+                Department Id
+            </td>
+            <td></td>
+        </tr>
+        <tr *ngFor='let employee of employees'>
+            <td>{{employee.id}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.departmentId}}</td>
+            <td><button class="btn btn-success" (click) = "details.open(employee)" id="btnDetails">Details</button></td>
+            <td><button class="btn btn-warning" (click) = "removeEmployee(employee)">Delete</button></td>
+        </tr>
+    </table>
+    </div>
+    <div>
+        <app-employee-details [employee]="employee" #details></app-employee-details>
+    </div>
+    <div>
+        <!--<app-modal  [employee]="employee"></app-modal>-->
+    </div>
+    

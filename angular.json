@@ -71,6 +71,9 @@
             }
           }
         },
+        "start":{
+          "builder": "ng serve --open"
+        },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
@@ -81,7 +84,7 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": "src/polyfills.tsy",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "assets": [
@@ -89,9 +92,14 @@
               "src/assets"
             ],
             "styles": [
+              "../..//node_modules/@ng-bootstrap/ng-bootstrap",
+              "../../node_modules/bootstrap/dist/css/bootstrap.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "../../node_modules/bootstrap/dist/js/bootstrap.js",
+              "../../node_modules/jQuery/tmp/jquery.js"
+            ]
           }
         },
         "lint": {
